@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@import "primeicons/primeicons.css";
+
+body {
+    background-color: #F9F6EE;
+    font-family: 'Rubik', sans-serif;
+}
+
+.p-button.p-button-secondary {
+    background-color: #F9F6EE !important;
+    border-color: #F9F6EE !important;
+    color: #383833 !important;
+}
