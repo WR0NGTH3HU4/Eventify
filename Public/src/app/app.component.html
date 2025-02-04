@@ -14,7 +14,19 @@
 
 <div class="menubar">
   
-  <p-menubar [model]="items" />
+  <p-menubar>
+    <p-button label="Felhasználói feltételek" />
+    <p-button label="Események" />
+
+    <p-iconField iconPosition="left">
+      <p-inputIcon styleClass="pi pi-search" />
+      <input type="text" pInputText placeholder="Search" />
+    </p-iconField>
+
+    <p-button label="Bejelentkezés" />
+    <p-button label="Regisztráció" />
+
+</p-menubar>
 
 </div>
 
@@ -35,6 +47,7 @@
             
     </svg>
 </div>
+
 
 
 

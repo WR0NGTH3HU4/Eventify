@@ -38,7 +38,8 @@ export class AppComponent implements OnInit {
         {
             label: 'Belépés',
             icon: 'pi pi-sign-in',
-            routerLink: '/login'
+            routerLink: '/login',
+            command: () => this.onClick()
             
         },
 
@@ -49,4 +50,7 @@ export class AppComponent implements OnInit {
         }
     ]
 }
+    onClick(): void {
+        throw new Error('Method not implemented.');
+    }
 }

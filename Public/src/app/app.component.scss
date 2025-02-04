@@ -1,27 +1,27 @@
 
 
-.menubar{
+.menubar {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    z-index: 1;
-}
-
-.custom-button {
-    background-color: #007bff; 
-    border-color: #007bff;    
-    color: white;            
-}
-
-
-.custom-button:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
-}
-
-.custom-button:focus {
-    outline: none; 
-}
+    justify-content: center; /* Középre igazítás */
+    align-items: center; /* Vertikális középre igazítás */
+    width: 100%; /* A teljes szélesség */
+  }
+  
+  p-menubar {
+    display: flex;
+    justify-content: space-between; /* Egyenlő távolságok a menüelemek között */
+    align-items: center; /* Vertikális középre igazítás */
+    width: auto; /* Az elemek szélessége */
+  }
+  
+  p-button {
+    margin: 0 15px; /* A gombok közötti távolság */
+  }
+  
+  p-iconField {
+    margin: 0 15px; /* A keresőmező és a gombok közötti távolság */
+  }
+  
 
 
 .svg-container {
