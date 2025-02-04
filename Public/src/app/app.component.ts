@@ -1,14 +1,52 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { LandingpageComponent } from './components/landingpage/landingpage.component';
+import { Component, OnInit } from '@angular/core';
+import { InputIconModule } from 'primeng/inputicon';
+import { IconFieldModule } from 'primeng/iconfield';
+import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from 'primeng/button';
+import { FormsModule } from '@angular/forms';
+import { MenubarModule } from 'primeng/menubar';
+import { MenuItem } from 'primeng/api';
+import { RouterModule, RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, LandingpageComponent],
+  imports: [RouterOutlet, RouterModule, InputIconModule, IconFieldModule, InputTextModule, ButtonModule, FormsModule, MenubarModule, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
-  title = 'Public';
+export class AppComponent implements OnInit {
+  title = 'Főoldal';
+
+  items: MenuItem[] | undefined;
+
+  ngOnInit() {
+    this.items = [
+        {
+            label: 'Felhasználó Feltételek',
+            icon: 'pi pi-file',
+            routerLink: '/'
+        },
+
+        {
+            label: 'Események',
+            icon: 'pi pi-calendar',
+            routerLink: '/'
+        },
+
+        {
+            label: 'Belépés',
+            icon: 'pi pi-sign-in',
+            routerLink: '/login'
+            
+        },
+
+        {
+            label: 'Regisztráció',
+            icon: 'pi pi-user-plus',
+            routerLink: '/'
+        }
+    ]
+}
 }
