@@ -5,6 +5,7 @@
     justify-content: center; /* Középre igazítás */
     align-items: center; /* Vertikális középre igazítás */
     width: 100%; /* A teljes szélesség */
+    
   }
   
   p-menubar {
@@ -44,5 +45,10 @@
     align-items: flex-start;
     z-index: -1;
 }
+
+.felhasznFeltetelek {
+  text-align: justify;
+}
+
 
 
