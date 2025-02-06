@@ -34,7 +34,8 @@ export class AppComponent implements OnInit {
         {
             label: 'Felhasználó Feltételek',
             icon: 'pi pi-file',
-            routerLink: '/'
+            routerLink: '/',
+            command: () => this.showDialog()
         },
 
         {
@@ -47,7 +48,7 @@ export class AppComponent implements OnInit {
             label: 'Belépés',
             icon: 'pi pi-sign-in',
             routerLink: '/login',
-            command: () => this.onClick()
+            command: () => this.loginNav()
             
         },
 
@@ -58,7 +59,7 @@ export class AppComponent implements OnInit {
         }
     ]
 }
-    onClick(): void {
-        throw new Error('Method not implemented.');
+    loginNav(): void {
+        console.log("Ez navigál a loginra")
     }
 }
