@@ -48,7 +48,6 @@ export class NavbarComponent {
             label: 'Belépés',
             icon: 'pi pi-sign-in',
             routerLink: '/login',
-         //   command: () => this.loginNav()
             
         },
 

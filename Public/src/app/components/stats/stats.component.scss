@@ -2,7 +2,7 @@
     display: flex; /* Flexbox elrendezés alkalmazása */
     justify-content: space-between; /* Elrendezi a két elemet egymás mellett */
     width: 100%; /* A konténer teljes szélességet használ */
-    align-items: normal;
+    align-items: flex-start;
   }
   
   .chart {

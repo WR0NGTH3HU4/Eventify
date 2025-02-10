@@ -3,6 +3,7 @@ import { AppComponent } from './app.component';
 import { NeweventComponent } from './components/newevent/newevent.component';
 import { LandingpageComponent } from './components/landingpage/landingpage.component';
 import { StatsComponent } from './components/stats/stats.component';
+import { LoginComponent } from './components/login/login.component';
 
 export const routes: Routes = [
     {
@@ -20,6 +21,10 @@ export const routes: Routes = [
     {
         path: 'stats', component: StatsComponent
     },
+
+    {
+      path: 'login', component: LoginComponent
+  },
     
     {
         path: '**', redirectTo: '' 
