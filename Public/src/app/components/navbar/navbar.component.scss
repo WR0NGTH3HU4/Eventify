@@ -1,0 +1,25 @@
+.menubar {
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center; 
+    width: 100%; 
+    
+  }
+  
+::ng-deep .p-menubar  {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    width: auto; 
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+  
+p-button {
+    margin: 0 15px; 
+}
+  
+p-iconField {
+    margin: 0 15px;
+}

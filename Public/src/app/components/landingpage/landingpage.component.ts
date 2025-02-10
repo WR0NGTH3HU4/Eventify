@@ -11,10 +11,11 @@ import { CommonModule } from '@angular/common';
 import { DialogModule } from 'primeng/dialog';
 
 
+
 @Component({
   selector: 'app-landingpage',
   standalone: true,
-  imports: [RouterModule, InputIconModule, IconFieldModule, InputTextModule, ButtonModule, FormsModule, MenubarModule, CommonModule, DialogModule],
+  imports: [RouterModule, InputIconModule, IconFieldModule, InputTextModule, ButtonModule, FormsModule, MenubarModule, CommonModule, DialogModule,],
   templateUrl: './landingpage.component.html',
   styleUrl: './landingpage.component.scss'
 })

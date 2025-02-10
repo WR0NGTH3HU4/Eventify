@@ -1,0 +1,33 @@
+.container {
+    display: flex; /* Flexbox elrendezés alkalmazása */
+    justify-content: space-between; /* Elrendezi a két elemet egymás mellett */
+    width: 100%; /* A konténer teljes szélességet használ */
+    align-items: normal;
+  }
+  
+  .chart {
+    width: 60%; /* A grafikon a képernyő 60%-át foglalja el */
+    padding: 10px; /* Néhány padding, hogy ne legyenek túl szorosak az elemek */
+  }
+  
+  .card {
+    width: 40%; /* A kártya a képernyő 40%-át foglalja el */
+    padding: 10px; /* Padding a kártya belsejében */
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column; /* Ha a képernyő szélessége kisebb, az elemek egymás alá kerülnek */
+    }
+  
+    .chart, .card {
+      width: 100%; /* Az elemek teljes szélességet foglalnak el mobilon */
+    }
+  }
+
+p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 300%;
+}

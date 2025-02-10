@@ -1,0 +1,18 @@
+.svg-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -5;
+}
+  
+.svg-bg svg {
+    position: relative;
+    height: 100vh;
+    width: auto;
+    left: 0;
+    max-width: none;
+  
+}
