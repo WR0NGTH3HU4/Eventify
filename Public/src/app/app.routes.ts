@@ -4,14 +4,15 @@ import { NeweventComponent } from './components/newevent/newevent.component';
 import { LandingpageComponent } from './components/landingpage/landingpage.component';
 import { StatsComponent } from './components/stats/stats.component';
 import { LoginComponent } from './components/login/login.component';
+import { UserAuthGuard } from './guards/user-auth.guard';
 
 export const routes: Routes = [
+
+    /**
+   *  logged out routes
+   */
     {
-        path: '', component: LandingpageComponent
-    },
-    
-    {
-        path: 'newevent', component: NeweventComponent
+        path: 'login', component: LoginComponent
     },
 
     {
@@ -19,12 +20,23 @@ export const routes: Routes = [
     },
 
     {
-        path: 'stats', component: StatsComponent
+        path: '', component: LandingpageComponent
+    },
+    
+    /**
+   * logged in routes
+   */
+    {
+        path: 'newevent', component: NeweventComponent, canActivate: [UserAuthGuard]
     },
 
     {
-      path: 'login', component: LoginComponent
-  },
+        path: 'stats', component: StatsComponent, canActivate: [UserAuthGuard]
+    },
+
+    /**
+   * Other routes
+   */
     
     {
         path: '**', redirectTo: '' 
