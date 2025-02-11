@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MenuItem } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
 import { MenubarModule } from 'primeng/menubar';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -13,7 +14,8 @@ import { MenubarModule } from 'primeng/menubar';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
-export class NavbarComponent {
+export class NavbarComponent  implements OnInit{
+  constructor(private auth:AuthService){}
   visible: boolean = false;
 
   showDialog() {
@@ -23,44 +25,47 @@ export class NavbarComponent {
 
   items: MenuItem[] | undefined;
 
-  ngOnInit() {
+  ngOnInit(): void{
+    this.auth.isLoggedIn$.subscribe(res => {
+      this.setupMenu(res)
+    });
+  }
+
+  setupMenu(isLoggedIn:boolean){
     this.items = [
-      {
-        label: 'Statisztika',
-        icon: 'pi pi-file',
-        routerLink: '/stats',
-      },
-        
-        {
-            label: 'Felhasználó Feltételek',
-            icon: 'pi pi-file',
-            routerLink: '/',
-            command: () => this.showDialog()
-        },
+      ...(isLoggedIn) ? [
+        ...(this.auth.isUser()) ? [
+          {
+            label: 'Statisztika',icon: 'pi pi-file', routerLink: '/stats'
+          },
+          {
+            label: 'Események',icon: 'pi pi-calendar', routerLink: '/'
+          },
 
-        {
-            label: 'Események',
-            icon: 'pi pi-calendar',
-            routerLink: '/'
-        },
+         
+          
+        ] : [
+          
+        ]
 
-        {
-            label: 'Belépés',
-            icon: 'pi pi-sign-in',
-            routerLink: '/login',
-            
-        },
+      ] : [
+          {
+            label: 'Belépés',icon: 'pi pi-sign-in',routerLink: '/login',     
+          },
+          
+          {
+            label: 'Regisztráció',icon: 'pi pi-user-plus',routerLink: '/'
+          },
 
-        {
-            label: 'Regisztráció',
-            icon: 'pi pi-user-plus',
-            routerLink: '/'
-        },
-        {
-          label: 'Vissza a főoldalra',
-          icon: 'pi pi-home',
-          routerLink: '/landingpage'
-      }
-    ]
-}
+          {
+            label: 'Felhasználó Feltételek',icon: 'pi pi-file',routerLink: '/',command: () => this.showDialog()
+          },
+          
+          {
+            label: 'Vissza a főoldalra',icon: 'pi pi-home', routerLink: '/landingpage'
+          },         
+      ]
+    ];
+  }
+  
 }
