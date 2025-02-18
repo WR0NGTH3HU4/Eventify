@@ -61,3 +61,17 @@ exports.updateEmail = async(id ,email) => {
     return 'Email cím módosítás sikeres!'
 
 }
+
+exports.updateUsername = async(id ,username) => {
+    const userEmail = User.update({
+        username
+    },
+    {
+        where: {id}
+    });
+
+    if (userEmail == 0) throw new Error('A felhasználó nem található!');
+
+    return 'Felhasználónév módosítás sikeres!'
+
+}

@@ -15,4 +15,7 @@ router.patch('/password/:id', authMiddleware, userController.password)
 //update emai
 router.patch('/email/:id', authMiddleware, userController.email)
 
+//update username
+router.patch('/username/:id', authMiddleware, userController.username)
+
 module.exports = router
