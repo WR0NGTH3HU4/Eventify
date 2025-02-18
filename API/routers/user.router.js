@@ -9,4 +9,7 @@ router.post('/register', userController.register);
 //login user
 router.post('/login', userController.login);
 
+//update password
+router.patch('/password/:id', authMiddleware, userController.password)
+
 module.exports = router
