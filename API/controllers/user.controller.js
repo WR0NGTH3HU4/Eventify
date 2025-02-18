@@ -49,4 +49,25 @@ exports.password = async (req, res, next) => {
     catch (error) {
         next(error)
     }
+};
+
+exports.email = async (req, res, next) => {
+    try {
+        const {email} = req.body
+
+        if (!req.params.id)
+        {
+            return res.status(400).json({ message: 'Hiányzó azonosító!'});
+        }
+        if (!email) {
+            return res.status(400).json({message: 'Hiányzó adatok'})
+        }
+
+        const user = userService.updateEmail(req.params.id, email)
+
+        res.status(200).json({success:true, message: 'Email cím módosítás sikeres!'});
+    } 
+    catch (error) {
+        next(error)
+    }
 }

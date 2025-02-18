@@ -32,11 +32,22 @@ Content-Type: application/json
 ### update password
 # @name password
 
-PATCH {{baseUrl}}/users/password/57513078-9a1b-467a-b41e-96de22966e62
+PATCH {{baseUrl}}/users/password/0242be39-ba20-4539-a776-8b8b2b3916e4
 Content-Type: application/json
 Authorization: Bearer {{authToken}}
 
 {
     "password":"Teszt123",
     "confirm":"Teszt123"
+}
+
+### update email
+# @name email
+
+PATCH {{baseUrl}}/users/email/0242be39-ba20-4539-a776-8b8b2b3916e4
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+    "email":"teszt@gmail.com"
 }

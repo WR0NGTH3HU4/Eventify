@@ -46,4 +46,18 @@ exports.updatePassword = async(id ,password) => {
 
     return 'Jelszó módosítás sikeres!'
 
+};
+
+exports.updateEmail = async(id ,email) => {
+    const userEmail = User.update({
+        email
+    },
+    {
+        where: {id}
+    });
+
+    if (userEmail == 0) throw new Error('A felhasználó nem található!');
+
+    return 'Email cím módosítás sikeres!'
+
 }

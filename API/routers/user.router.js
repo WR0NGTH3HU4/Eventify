@@ -12,4 +12,7 @@ router.post('/login', userController.login);
 //update password
 router.patch('/password/:id', authMiddleware, userController.password)
 
+//update emai
+router.patch('/email/:id', authMiddleware, userController.email)
+
 module.exports = router
