@@ -20,10 +20,9 @@ const EventRatings = db.define('EventRatings', {
 });
 
 //Kapcsolatok
-EventRatings.hasMany(Event, {foreignKey: 'eventId'});
-Events.belongsTo(EventRatings, {foreignKey: 'eventId'});
+Events.hasMany(EventRatings, {foreignKey: 'eventId'});
+User.hasMany(EventRatings, {foreignKey: 'userId'});
 
-EventRatings.hasMany(User, {foreignKey: 'userId'});
-User.belongsTo(EventRatings, {foreignKey: 'userId'});
+EventRatings.belongsTo(Events, User,{foreignKey: 'eventId', foreignKey: 'userId'});
 
 module.exports = { EventRatings };

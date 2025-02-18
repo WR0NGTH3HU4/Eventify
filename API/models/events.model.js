@@ -28,10 +28,9 @@ const Events = db.define('Events', {
 });
 
 //Kapcsolatok
-Events.hasMany(User, Categories, {foreignKey: 'userId'},{});
-User.belongsTo(Events, {foreignKey: 'userId'});
+User.hasMany(Events, Categories, {foreignKey: 'userId'});
+Categories.hasMany(Events, {foreignKey: 'catId'});
 
-Events.hasMany(Categories, {foreignKey: 'catId'});
-Categories.belongsTo(Events, {foreignKey: 'catId'});
+Events.belongsTo(User, Categories, {foreignKey: 'userId', foreignKey: 'catId'});
 
 module.exports = { Events };

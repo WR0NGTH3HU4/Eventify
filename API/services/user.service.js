@@ -18,3 +18,15 @@ exports.registerUser = async (username, email, password, gender, defAddress, fav
 
     return user
 };
+
+exports.loginUser = async (email, password) => {
+    const user = await User.findOne({where: { email }});
+
+    if (!user) throw new Error('Nem regisztrált felhasználó!');
+
+    if (!await bcrypt.compare(password, user.password)) throw new Error('Hibás jelszó!');
+
+    const token = generateToken({ id: user.id, address: user.address ,name: user.name, email: user.email});
+    
+    return { token }; 
+};
