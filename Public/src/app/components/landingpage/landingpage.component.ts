@@ -9,13 +9,14 @@ import { FormsModule } from '@angular/forms';
 import { MenubarModule } from 'primeng/menubar';
 import { CommonModule } from '@angular/common';
 import { DialogModule } from 'primeng/dialog';
+import { FooterComponent } from '../footer/footer.component';
 
 
 
 @Component({
   selector: 'app-landingpage',
   standalone: true,
-  imports: [RouterModule, InputIconModule, IconFieldModule, InputTextModule, ButtonModule, FormsModule, MenubarModule, CommonModule, DialogModule,],
+  imports: [RouterModule, InputIconModule, IconFieldModule, InputTextModule, ButtonModule, FormsModule, MenubarModule, CommonModule, DialogModule, FooterComponent],
   templateUrl: './landingpage.component.html',
   styleUrl: './landingpage.component.scss'
 })
