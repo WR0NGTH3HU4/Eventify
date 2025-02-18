@@ -1,0 +1,80 @@
+.register-container {
+    display: flex;
+    width: 400px;
+    height: 600px;
+    margin: 50px auto;
+    background-color: #121212;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.register-box {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+}
+
+.input-wrapper {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 30px;
+}
+
+.input-wrapper p-floatLabel {
+    width: 100%;
+}
+
+.input-field,
+p-password {
+    width: 100% !important;
+    display: block;
+    box-sizing: border-box;
+}
+
+p-password .p-inputwrapper {
+    width: 100% !important;
+}
+
+.register-btn {
+    background-color: #035559;
+    display: flex;
+    justify-content: center; /* Szöveg középre igazítása vízszintesen */
+    align-items: center; /* Szöveg középre igazítása függőlegesen */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 140px;
+    height: 40px; /* Adj meg egy konkrét magasságot */
+    margin-top: 10px;
+    text-align: center; /* Ha flex nem működne */
+}
+
+
+.svg-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -5;
+}
+
+h1{
+    margin-bottom: 40px;
+}
+.radio-group {
+    display: flex;
+    align-items: center;
+    gap: 16px; // Távolság a két rádiógomb között
+}
+
