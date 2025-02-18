@@ -37,8 +37,8 @@ Content-Type: application/json
 Authorization: Bearer {{authToken}}
 
 {
-    "password":"Teszt123",
-    "confirm":"Teszt123"
+    "password": "Teszt123",
+    "confirm": "Teszt123"
 }
 
 ### update email
@@ -49,5 +49,16 @@ Content-Type: application/json
 Authorization: Bearer {{authToken}}
 
 {
-    "email":"teszt@gmail.com"
+    "email": "teszt@gmail.com"
+}
+
+### update username
+# @name username
+
+PATCH {{baseUrl}}/users/username/0242be39-ba20-4539-a776-8b8b2b3916e4
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+    "username": "teszt1"
 }

@@ -70,4 +70,25 @@ exports.email = async (req, res, next) => {
     catch (error) {
         next(error)
     }
+};
+
+exports.username = async (req, res, next) => {
+    try {
+        const {username} = req.body
+
+        if (!req.params.id)
+        {
+            return res.status(400).json({ message: 'Hiányzó azonosító!'});
+        }
+        if (!username) {
+            return res.status(400).json({message: 'Hiányzó adatok'})
+        }
+
+        const user = userService.updateUsername(req.params.id, username)
+
+        res.status(200).json({success:true, message: 'Felhasználónév módosítás sikeres!'});
+    } 
+    catch (error) {
+        next(error)
+    }
 }
