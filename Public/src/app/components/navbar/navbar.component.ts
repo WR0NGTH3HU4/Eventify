@@ -58,12 +58,16 @@ export class NavbarComponent  implements OnInit{
           },
 
           {
-            label: 'Felhasználó Feltételek',icon: 'pi pi-file',routerLink: '/',command: () => this.showDialog()
+            label: 'Felhasználó Feltételek',icon: 'pi pi-file',command: () => this.showDialog()
           },
           
           {
             label: 'Vissza a főoldalra',icon: 'pi pi-home', routerLink: '/landingpage'
-          },         
+          }, 
+          
+          {
+            label: 'Profil',icon: 'pi pi-user', routerLink: '/profile'
+          }, 
       ]
     ];
   }

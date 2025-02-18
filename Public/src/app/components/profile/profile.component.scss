@@ -1,0 +1,93 @@
+html, body {
+    height: 100%; /* Biztosítja, hogy a body teljes magasságot vegyen fel */
+    margin: 0; /* Eltávolítja az alapértelmezett margókat */
+    display: flex; /* Flexbox elrendezés használata a középre igazításhoz */
+    justify-content: center; /* Középre igazítja vízszintesen */
+    align-items: center; /* Középre igazítja függőlegesen */
+}
+
+.profileContainer {
+    display: flex;
+    width: 80%;
+    height: 90vh;
+    padding: 30px;
+    background-color: #121212;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+    gap: 35px;
+}
+
+.leftSide {
+    display: flex;
+    align-items: flex-end;
+    background-color: #035d61;
+    height: 100%;
+    width: 60%;
+    border-radius: 20px;
+    opacity: 0.9;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.rightSide {
+    display: flex;
+    flex-direction: column; /* A jobb oldali két divet egymás alá rendezzük */
+    width: 40%;
+    height: 100%; /* A jobb oldal magassága az egész konténerre vonatkozik */
+}
+
+.rightSideTop {
+    display: flex;
+    align-items: flex-end;
+    background-color: #035d61;
+    height: 50%; /* A felső rész felét fogja elfoglalni */
+    margin-bottom: 35px;
+    border-radius: 20px;
+    opacity: 0.9;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.rightSideBottom {
+    display: flex;
+    align-items: flex-end;
+    background-color: #035d61; /* Kék szín az alsó részhez */
+    height: 50%; /* Az alsó rész felét fogja elfoglalni */
+    border-radius: 20px;
+    opacity: 0.9;
+     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.leftSide, .rightSideTop, .rightSideBottom {
+    opacity: 0;
+    transform: translateY(30px); /* Elmozdulás lefelé */
+    animation: slideIn 0.6s ease-out forwards; /* Animáció hozzáadása */
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1; /* Az elem fokozatosan láthatóvá válik */
+        transform: translateY(0); /* Az elem visszaáll az eredeti helyére */
+    }
+}
+
+@media (max-width: 768px) {
+    .profileContainer {
+        flex-direction: column; /* Vertikális elrendezés */
+        width: 90%; /* A szélesség nagyobb a telefonos nézethez */
+        height: 90vh; /* A magasság automatikusan igazodik */
+    }
+
+    .leftSide, .rightSide {
+        width: 100%; /* Mindkét rész 100%-os szélességű lesz */
+        height: 50%;
+    }
+
+    .rightSideTop, .rightSideBottom {
+        height: 50%; 
+        margin-bottom: 20px; 
+    }
+
+   
+}
