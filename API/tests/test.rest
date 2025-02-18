@@ -25,6 +25,6 @@ POST  {{baseUrl}}/users/login
 Content-Type: application/json
 
 {
-    "email": "kevin@turr.hu",
-    "password": "Turr123"
+    "email": "teszt@gmail.com",
+    "password": "Teszt123"
 }
