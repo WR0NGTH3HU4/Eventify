@@ -1,6 +1,7 @@
 const { User } = require('../models/user.model');
 const bcrypt = require('bcrypt');
 const { generateToken } = require('../utils/token');
+const { configDotenv } = require('dotenv');
 
 exports.registerUser = async (username, email, password, gender, defAddress, favCategories, role, status)=>{
     const hashedPassword = await bcrypt.hash(password, 10);
@@ -30,3 +31,19 @@ exports.loginUser = async (email, password) => {
     
     return { token }; 
 };
+
+exports.updatePassword = async(id ,password) => {
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    const userPasswd = User.update({
+        password: hashedPassword
+    },
+    {
+        where: {id}
+    });
+
+    if (userPasswd == 0) throw new Error('A felhasználó nem található!');
+
+    return 'Jelszó módosítás sikeres!'
+
+}

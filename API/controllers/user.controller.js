@@ -25,3 +25,28 @@ exports.login = async (req, res, next) => {
         next(error);
     }
 }
+
+exports.password = async (req, res, next) => {
+    try {
+        const {password, confirm} = req.body
+
+        if (!req.params.id)
+        {
+            return res.status(400).json({ message: 'Hiányzó azonosító!'});
+        }
+        if (!password || !confirm) {
+            return res.status(400).json({message: 'Hiányzó adatok'})
+        }
+        if (password != confirm)
+        {
+            return res.status(400).json({ message: 'A jelszavak nem egyeznek!'});
+        }
+
+        const user = userService.updatePassword(req.params.id, password)
+
+        res.status(200).json({success:true, message: 'jelszó módosítás sikeres!'});
+    } 
+    catch (error) {
+        next(error)
+    }
+}

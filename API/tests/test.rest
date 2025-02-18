@@ -28,3 +28,15 @@ Content-Type: application/json
     "email": "teszt@gmail.com",
     "password": "Teszt123"
 }
+
+### update password
+# @name password
+
+PATCH {{baseUrl}}/users/password/57513078-9a1b-467a-b41e-96de22966e62
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+    "password":"Teszt123",
+    "confirm":"Teszt123"
+}
