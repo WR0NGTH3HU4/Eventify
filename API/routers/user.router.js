@@ -5,3 +5,5 @@ const { authMiddleware } = require('../middlewares/auth.middleware');
 
 // register new user
 router.post('/register', userController.register);
+
+module.exports = router
