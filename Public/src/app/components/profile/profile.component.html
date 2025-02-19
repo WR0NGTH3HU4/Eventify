@@ -1,5 +1,27 @@
 <div class="profileContainer">
-    <div class="leftSide"></div>
+    <div class="leftSide">
+        <div class="pfpDiv"></div>
+        <div class="inputDiv">
+
+            <div class="input-wrapper">
+                <p-floatLabel>
+                    <input pInputText id="username" [(ngModel)]="userValue" class="input-field" />
+                    <label for="Felhasználónév">Felhasználónév</label>
+                </p-floatLabel>
+            </div>
+    
+           
+            <div class="input-wrapper">
+                <p-floatLabel>
+                    <input pInputText id="email" [(ngModel)]="emailValue" class="input-field" />
+                    <label for="Email">Email</label>
+                </p-floatLabel>
+            </div>
+            
+    
+            <button class="update-btn">Módositás</button>
+        </div>
+    </div>
     <div class="rightSide">
         <div class="rightSideTop"></div>
         <div class="rightSideBottom"></div>
