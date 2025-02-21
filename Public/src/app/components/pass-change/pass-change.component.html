@@ -13,7 +13,25 @@
       </svg>
         
     </div>
+    <div class="passChangeContainer">
+      <div class="passChangeBox">
+        <h1>Jelszó módosítás</h1>
 
+        <div class="input-wrapper">
+          <p-floatLabel>
+              <p-password id="password" [(ngModel)]="passValue" [toggleMask]="true" class="input-field"></p-password>
+              <label for="Jelszó">Új jelszó</label>
+          </p-floatLabel>
+        </div>
+        <div class="input-wrapper">
+          <p-floatLabel>
+              <p-password id="password" [(ngModel)]="passValue" [toggleMask]="true" class="input-field"></p-password>
+              <label for="Jelszó">Új jelszó megerősítése</label>
+          </p-floatLabel>
+        </div>
+
+      </div>
+    </div>
   <app-footer></app-footer>
 
   
