@@ -19,6 +19,16 @@ exports.registerUser = async (username, email, password, gender, defAddress, fav
 
     return user
 };
+exports.uploadImg = async (id, image)=>{
+    const user = User.update(
+        {
+            image
+        },
+        {
+            where: {id}
+        });
+        return user
+};
 
 exports.loginUser = async (email, password) => {
     const user = await User.findOne({where: { email }});

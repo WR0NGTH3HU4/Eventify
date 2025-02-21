@@ -24,7 +24,36 @@ exports.login = async (req, res, next) => {
     }catch(error){
         next(error);
     }
-}
+};
+exports.image = async(req, res, next)=>{
+    try{
+
+        console.log('Body:', req.body);
+        console.log('File:', req.file);
+        
+        // Ellenőrizzük, hogy van-e feltöltött fájl
+        if (!req.file) {
+            return res.status(400).json({
+                success: false,
+                message: 'Nem található feltöltött fájl.',
+            });
+        }
+
+        // Feltöltött fájl adatai
+        const file = req.file;
+
+        const image = req.file ? req.file.filename : null;
+
+        if ( !image){
+            return res.status(400).json({ message: 'Hiányzó adat!'});
+        }
+        const ad = await userService.uploadImg(req.params.id, image);
+        res.status(201).json({success: true, message: "Profilkép feltöltése sikeres!"});
+    }catch(error){
+        console.log(error)
+        next(error);
+    }
+};
 
 exports.password = async (req, res, next) => {
     try {
