@@ -66,6 +66,11 @@ export class LandingpageComponent {
             label: 'Regisztráció',
             icon: 'pi pi-user-plus',
             routerLink: '/'
+        },
+        {
+            label: 'PassChange',
+            icon: 'pi pi-user-plus',
+            routerLink: '/pass-change'
         }
     ]
 }

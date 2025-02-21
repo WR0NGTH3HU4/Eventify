@@ -67,7 +67,13 @@ export class NavbarComponent  implements OnInit{
           
           {
             label: 'Profil',icon: 'pi pi-user', routerLink: '/profile'
-          }, 
+          },
+          {
+            label: 'Jelszó módosítás',
+            icon: 'pi pi-key',
+            routerLink: ['/pass-change']
+          }
+          
       ]
     ];
   }

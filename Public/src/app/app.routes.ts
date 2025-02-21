@@ -6,6 +6,7 @@ import { StatsComponent } from './components/stats/stats.component';
 import { LoginComponent } from './components/login/login.component';
 import { UserAuthGuard } from './guards/user-auth.guard';
 import { ProfileComponent } from './components/profile/profile.component';
+import { PassChangeComponent } from './components/pass-change/pass-change.component';
 
 export const routes: Routes = [
 
@@ -26,6 +27,9 @@ export const routes: Routes = [
 
     {
         path: '', component: LandingpageComponent
+    },
+    {
+        path: 'pass-change', component: PassChangeComponent
     },
     
     /**
