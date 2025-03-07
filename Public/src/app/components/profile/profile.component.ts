@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { PasswordModule } from 'primeng/password';
 import { ButtonModule } from 'primeng/button';
+import { Router, RouterLink } from '@angular/router';
+import { routes } from '../../app.routes';
 
 @Component({
   selector: 'app-profile',
@@ -13,6 +15,15 @@ import { ButtonModule } from 'primeng/button';
   styleUrl: './profile.component.scss'
 })
 export class ProfileComponent {
+  constructor(
+    private router: Router
+  ){}
+
   userValue: string | undefined;
   emailValue!: string;
+
+  openOwnEvents(){
+
+    this.router.navigate(['/profile/ownevents']);
+  }
 }
