@@ -1,6 +1,6 @@
 .login-container {
     display: flex;
-    width: 400px;
+    width: 500px;
     height: 600px;
     margin: 50px auto;
     background-color: #121212;
@@ -18,7 +18,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    
 
 }
 
@@ -41,6 +41,11 @@ p-password {
 
 p-password .p-inputwrapper {
     width: 100% !important;
+}
+
+#password {
+    
+    margin-bottom: 15px;
 }
 
 .sign-in-btn {
@@ -67,4 +72,15 @@ p-password .p-inputwrapper {
 
 h1{
     margin-bottom: 40px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    font-size: small;
+}
+
+a:hover{
+    //color: #035559;
+    text-decoration: underline;
 }
